@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './components/tabbar/Home'
+import NewsList from './components/news/NewsList'
+import NewsInfo from './components/news/NewsInfo'
 import Member from './components/tabbar/Member'
 import Car from './components/tabbar/Car'
 import Search from './components/tabbar/Search'
@@ -10,7 +12,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: Home
+      redirect: Home,
     },
     {
       path: '/home',
@@ -31,7 +33,17 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search
-    }
+    },
+    {
+      path: '/home/newslist',
+      name: 'newslist',
+      component: NewsList
+    },
+    {
+      path: '/home/newslist/newsinfo/:id',
+      name: 'newsinfo',
+      component: NewsInfo
+    },
   ],
   linkActiveClass: 'mui-active'
 })

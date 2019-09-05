@@ -5,7 +5,9 @@
       <mt-header fixed title="黑马程序员-Vue项目"></mt-header>
     </div>
     <!--router-view-->
-    <router-view></router-view>
+    <transition >
+      <router-view></router-view>
+    </transition>
     <!--tabbar-->
     <nav class="mui-bar mui-bar-tab">
         <router-link to="/home" class="mui-tab-item" >
@@ -32,5 +34,19 @@
 <style lang="scss">
   #app {
     padding-top: 40px;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+  }
+  .v-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  .v-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+    position: absolute;
+  }
+  .v-enter-active,.v-leave-active {
+    transition: all 0.2s ease;
   }
 </style>

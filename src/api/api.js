@@ -5,7 +5,13 @@ export const getSwiperList = (id) => {
   // returnget(`${bsae_api}/web/user/${id}`); //resfulapi风格
   return get(`http://www.liulongbin.top:3005/api/getlunbo`, { id: id }) // resfulapi风格
 }
-export const getTest = (params) => {
-  // returnget(`${bsae_api}/web/user/${id}`); //resfulapi风格
-  return get(`http://www.liulongbin.top:3005/api/getlunbo`, params) // resfulapi风格
+
+export const getNewList = () => {
+  return get(`http://www.liulongbin.top:3005/api/getnewslist`) // resfulapi风格
+}
+export const getNewInfo = (id) => {
+  return get(`http://www.liulongbin.top:3005/api/getnew/${id}`) // resfulapi风格
+}
+export const getComment = (id,key) => {
+  return get(`http://www.liulongbin.top:3005/api/getcomments/${id}?pageindex=`+key) // resfulapi风格
 }
