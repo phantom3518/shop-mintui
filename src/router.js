@@ -6,6 +6,9 @@ import NewsInfo from './components/news/NewsInfo'
 import Member from './components/tabbar/Member'
 import Car from './components/tabbar/Car'
 import Search from './components/tabbar/Search'
+import PhotoList from './components/photos/PhotosList'
+import PhotoInfo from './components/photos/photoInfo'
+import GoodsList from './components/goods/goodList'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +46,21 @@ export default new Router({
       path: '/home/newslist/newsinfo/:id',
       name: 'newsinfo',
       component: NewsInfo
+    },
+    {
+      path: '/home/photolist',
+      name: 'photolist',
+      component: PhotoList
+    },
+    {
+      path: '/home/photoinfo/:id',
+      name: 'photoinfo',
+      component: PhotoInfo
+    },
+    {
+      path: '/home/goodslist',
+      name: 'goodslist',
+      component: GoodsList
     },
   ],
   linkActiveClass: 'mui-active'

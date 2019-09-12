@@ -32,6 +32,9 @@
 </template>
 
 <style lang="scss">
+  .mint-header {
+    z-index:99
+  }
   #app {
     padding-top: 40px;
     padding-bottom: 50px;
