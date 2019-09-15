@@ -9,6 +9,7 @@ import Search from './components/tabbar/Search'
 import PhotoList from './components/photos/PhotosList'
 import PhotoInfo from './components/photos/photoInfo'
 import GoodsList from './components/goods/goodList'
+import GoodsInfo from './components/goods/goodInfo'
 Vue.use(Router)
 
 export default new Router({
@@ -61,6 +62,11 @@ export default new Router({
       path: '/home/goodslist',
       name: 'goodslist',
       component: GoodsList
+    },
+    {
+      path: '/home/goodsinfo/:id',
+      name: 'goodsinfo',
+      component: GoodsInfo
     },
   ],
   linkActiveClass: 'mui-active'

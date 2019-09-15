@@ -32,10 +32,7 @@
 
 </template>
 <script >
-  // import mui from '../../assets/mui/js/mui.min'
-  // mui('.mui-scroll-wrapper').scroll({
-  //   deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-  // });
+  import mui from '../../assets/mui/js/mui.min.js'
   import { getCategroy } from '@/api/api'
   import { getImageList } from '@/api/api'
   export default {
@@ -49,6 +46,11 @@
     created () {
       this.createCate()
       this.createImageList()
+    },
+    mounted() {
+      mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+      });
     },
     methods: {
       createCate() {
@@ -70,6 +72,9 @@
 </script>
 
 <style lang="scss" scoped>
+  * {
+    touch-action: pan-y;
+  }
   #slider {
     z-index:0
   }

@@ -1,10 +1,7 @@
 <template>
   <div class="home" >
-    <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="item in list" :key="item.id">
-        <img :src="item.img">
-      </mt-swipe-item>
-    </mt-swipe>
+
+    <swiper-list :list="list" :isfull="true"></swiper-list>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <router-link to="/home/newslist">
@@ -35,8 +32,12 @@
 <script>
 // import axios from 'axios'
 import { getSwiperList } from '@/api/api'
+import SwiperList from '../subcomponents/swiper'
 export default {
   name: 'home',
+  components: {
+    SwiperList
+  },
   data () {
     return {
       list: [],
@@ -67,24 +68,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .mint-swipe {
-    height: 200px;
-    .mint-swipe-item {
-      &:nth-child(1) {
-        background-color: hotpink;
-      }
-      &:nth-child(2) {
-        background-color: skyblue;
-      }
-      &:nth-child(3) {
-        background-color: lightcoral;
-      }
-    }
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+
   .mui-grid-view.mui-grid-9 {
     background-color: #fff;
     border: none;

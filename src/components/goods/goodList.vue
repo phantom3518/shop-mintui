@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="goods-list" >
-        <div class="goods-item" v-for="item in goodsList" :key="item.id">
+        <div class="goods-item" v-for="item in goodsList" :key="item.id" @click="goDetail(item.id)">
           <img :src="item.img_url">
           <h1 class="goods-title">
             {{item.title}}
@@ -49,6 +49,11 @@
         this.pageindex++
         this.createGoods()
       },
+      goDetail(id) {
+        this.$router.push("/home/goodsinfo/"+id)
+        // this.$router.push({path:"/home/goodsinfo/"+id})
+        // this.$router.push({name:'goodsinfo',params:{id:id}})
+      }
     }
   }
 </script>

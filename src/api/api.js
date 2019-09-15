@@ -33,3 +33,6 @@ export const getThumimages = (imgid) => {
 export const getGoods = (number) => {
   return get(`http://www.liulongbin.top:3005/api/getgoods?pageindex`+number)
 }
+export const getInfo = (id) => {
+  return get(`http://www.liulongbin.top:3005/api/goods/getinfo/${id}`)
+}
