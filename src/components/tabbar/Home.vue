@@ -31,6 +31,7 @@
 
 <script>
 // import axios from 'axios'
+// import { postTest } from '@/api/api'
 import { getSwiperList } from '@/api/api'
 import SwiperList from '../subcomponents/swiper'
 export default {
@@ -53,9 +54,8 @@ export default {
         .catch(error => {
           console.log(error)
         })
-      // axios.get('http://www.liulongbin.top:3005/api/getlunbo')
+      // postTest(1)
       //   .then(res => {
-      //     this.list = res.data.message
       //     console.log(res)
       //   }).catch(error => {
       //     console.log(error)

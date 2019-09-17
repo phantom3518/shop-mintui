@@ -36,3 +36,12 @@ export const getGoods = (number) => {
 export const getInfo = (id) => {
   return get(`http://www.liulongbin.top:3005/api/goods/getinfo/${id}`)
 }
+export const getGoodsDesc = (id) => {
+  return get(`http://www.liulongbin.top:3005/api/goods/getdesc/${id}`)
+}
+
+
+
+// export const postTest = (id) => {
+//   return get(`http://yapi.demo.qunar.com/mock/94400/api/mint`,{id:id})
+// }

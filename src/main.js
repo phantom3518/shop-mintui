@@ -34,3 +34,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+//组件挂载到VM实例上就都能访问
