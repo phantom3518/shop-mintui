@@ -40,7 +40,9 @@ export const getGoodsDesc = (id) => {
   return get(`http://www.liulongbin.top:3005/api/goods/getdesc/${id}`)
 }
 
-
+export const getShopcarList = (ids) => {
+  return get(`http://www.liulongbin.top:3005/api/goods/getshopcarlist/${ids}`)
+}
 
 // export const postTest = (id) => {
 //   return get(`http://yapi.demo.qunar.com/mock/94400/api/mint`,{id:id})
