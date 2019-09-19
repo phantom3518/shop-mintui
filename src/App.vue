@@ -2,7 +2,11 @@
   <div id="app">
     <!--header-->
     <div class="header">
-      <mt-header fixed title="黑马程序员-Vue项目"></mt-header>
+      <mt-header fixed title="黑马程序员-Vue项目">
+        <span @click="goBack" slot="left" v-show="flag">
+          <mt-button icon="back">返回</mt-button>
+        </span>
+      </mt-header>
     </div>
     <!--router-view-->
     <transition >
@@ -32,7 +36,29 @@
     <!---->
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+        flag:false
+      }
+    },
+    created() {
+      this.flag = this.$route.path !== "/home"
 
+    },
+    methods: {
+      goBack() {
+        this.$router.go(-1)
+      }
+    },
+    watch: {
+      '$route.path':function (newVal) {
+        this.flag = newVal !== '/home';
+      }
+    }
+  }
+</script>
 <style lang="scss">
   .mint-header {
     z-index:99

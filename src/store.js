@@ -44,6 +44,15 @@ export default new Vuex.Store({
         }
       })
       localStorage.setItem('car',JSON.stringify(state.car))
+    },
+    updateSelected(state, sel) {
+      state.car.some(item=> {
+        if(item.id == sel.id) {
+          item.selected = sel.selected
+        }
+      })
+      localStorage.setItem('car',JSON.stringify(state.car))
+
     }
   },
   getters: {//this.$store.getters
@@ -60,6 +69,23 @@ export default new Vuex.Store({
         o[item.id] = item.count
       })
       return o
+    },
+    getGoodsSelected(state) {
+      var o = {}
+      state.car.forEach(item=> {
+        o[item.id] = item.selected
+      })
+      return o
+    },
+    getCarInfo(state) {
+      var a = { count:0,amount:0 }
+      state.car.forEach(item=> {
+        if(item.selected){
+          a.count += item.count
+          a.amount += item.count * item.price
+        }
+      })
+      return a
     }
   },
   actions: {
