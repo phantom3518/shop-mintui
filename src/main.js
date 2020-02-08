@@ -5,7 +5,7 @@ import store from './store'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 // import { Header, Swipe, SwipeItem, Button, Lazyload } from 'mint-ui'
-import '../src/assets/mui/css/mui.min.css'
+import '../src/assets/mui/css/mui.css'
 import '../src/assets/mui/css/icons-extra.css'
 import moment from 'moment'
 // Vue.component(Swipe.name, Swipe)
